@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Drinks</h1>
+<h1>Tickets</h1>
 
 <table>
   <thead>
@@ -12,13 +12,13 @@
   </thead>
 
   <tbody>
-    <% @drinks.each do |drink| %>
+    <% @tickets.each do |drink| %>
       <tr>
-        <td><%= drink.name %></td>
-        <td><%= drink.temperature %></td>
-        <td><%= link_to 'Show', drink %></td>
-        <td><%= link_to 'Edit', edit_drink_path(drink) %></td>
-        <td><%= link_to 'Destroy', drink, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= ticket.name %></td>
+        <td><%= ticket.temperature %></td>
+        <td><%= link_to 'Show', ticket %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(drink) %></td>
+        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Drink', new_drink_path %>
+<%= link_to 'New Ticket', new_ticket_path %>

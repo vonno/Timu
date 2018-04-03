@@ -1,2 +1,2 @@
-class Drink < ApplicationRecord
+class Ticket < ApplicationRecord
 end

@@ -1,74 +1,74 @@
-class DrinksController < ApplicationController
-  before_action :set_drink, only: [:show, :edit, :update, :destroy]
+class TicketsController < ApplicationController
+  before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
-  # GET /drinks
-  # GET /drinks.json
+  # GET /tickets
+  # GET /tickets.json
   def index
-    @drinks = Drink.all
+    @tickets = Ticket.all
   end
 
-  # GET /drinks/1
-  # GET /drinks/1.json
+  # GET /tickets/1
+  # GET /tickets/1.json
   def show
   end
 
-  # GET /drinks/new
+  # GET /tickets/new
   def new
-    @drink = Drink.new
+    @ticket = Ticket.new
   end
 
-  # GET /drinks/1/edit
+  # GET /tickets/1/edit
   def edit
   end
 
-  # POST /drinks
-  # POST /drinks.json
+  # POST /tickets
+  # POST /tickets.json
   def create
-    @drink = Drink.new(drink_params)
+    @Ticket = Ticket.new(Ticket_params)
 
     respond_to do |format|
-      if @drink.save
-        format.html { redirect_to @drink, notice: 'Drink was successfully created.' }
-        format.json { render :show, status: :created, location: @drink }
+      if @Ticket.save
+        format.html { redirect_to @Ticket, notice: 'Ticket was successfully created.' }
+        format.json { render :show, status: :created, location: @Ticket }
       else
         format.html { render :new }
-        format.json { render json: @drink.errors, status: :unprocessable_entity }
+        format.json { render json: @Ticket.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /drinks/1
-  # PATCH/PUT /drinks/1.json
+  # PATCH/PUT /Tickets/1
+  # PATCH/PUT /Tickets/1.json
   def update
     respond_to do |format|
-      if @drink.update(drink_params)
-        format.html { redirect_to @drink, notice: 'Drink was successfully updated.' }
-        format.json { render :show, status: :ok, location: @drink }
+      if @Ticket.update(Ticket_params)
+        format.html { redirect_to @Ticket, notice: 'Ticket was successfully updated.' }
+        format.json { render :show, status: :ok, location: @Ticket }
       else
         format.html { render :edit }
-        format.json { render json: @drink.errors, status: :unprocessable_entity }
+        format.json { render json: @Ticket.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /drinks/1
-  # DELETE /drinks/1.json
+  # DELETE /Tickets/1
+  # DELETE /Tickets/1.json
   def destroy
-    @drink.destroy
+    @Ticket.destroy
     respond_to do |format|
-      format.html { redirect_to drinks_url, notice: 'Drink was successfully destroyed.' }
+      format.html { redirect_to Tickets_url, notice: 'Ticket was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_drink
-      @drink = Drink.find(params[:id])
+    def set_Ticket
+      @Ticket = Ticket.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def drink_params
-      params.require(:drink).permit(:name, :temperature)
+    def Ticket_params
+      params.require(:Ticket).permit(:name, :temperature)
     end
 end

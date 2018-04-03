@@ -1,10 +1,10 @@
-<%= form_with(model: drink, local: true) do |form| %>
-  <% if drink.errors.any? %>
+<%= form_with(model: Ticket, local: true) do |form| %>
+  <% if Ticket.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(drink.errors.count, "error") %> prohibited this drink from being saved:</h2>
+      <h2><%= pluralize(Ticket.errors.count, "error") %> prohibited this Ticket from being saved:</h2>
 
       <ul>
-      <% drink.errors.full_messages.each do |message| %>
+      <% Ticket.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :drink_name %>
+    <%= form.text_field :name, id: :Ticket_name %>
   </div>
 
   <div class="field">
     <%= form.label :temperature %>
-    <%= form.number_field :temperature, id: :drink_temperature %>
+    <%= form.number_field :temperature, id: :Ticket_temperature %>
   </div>
 
   <div class="actions">
