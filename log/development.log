@@ -1,0 +1,72 @@
+Started GET "/" for 127.0.0.1 at 2018-03-17 00:49:44 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/brittanywoedl/.rvm/gems/ruby-2.3.4/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/brittanywoedl/.rvm/gems/ruby-2.3.4/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb (4.6ms)
+Completed 200 OK in 270ms (Views: 11.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDrinks (20180317045156)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "temperature" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180317045156"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-17 04:52:07.202019"], ["updated_at", "2018-03-17 04:52:07.202019"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-03-17 00:52:31 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/brittanywoedl/.rvm/gems/ruby-2.3.4/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/brittanywoedl/.rvm/gems/ruby-2.3.4/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb (6.3ms)
+Completed 200 OK in 25ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2018-03-17 00:52:51 -0400
+Processing by DrinksController#index as HTML
+  Rendering drinks/index.html.erb within layouts/application
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  Rendered drinks/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 651ms (Views: 645.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2018-03-17 00:52:57 -0400
+Processing by DrinksController#index as HTML
+  Rendering drinks/index.html.erb within layouts/application
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  Rendered drinks/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/drinks/new" for 127.0.0.1 at 2018-03-17 00:53:01 -0400
+Processing by DrinksController#new as HTML
+  Rendering drinks/new.html.erb within layouts/application
+  Rendered drinks/_form.html.erb (39.1ms)
+  Rendered drinks/new.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 133ms (Views: 116.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2018-03-17 00:53:19 -0400
+Processing by DrinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bfhVmeFV2bF8nAKyPt3EjSgSKjEDLJoqPiWCgEfeQ3/d4NT8FUykWuYaBlWw+m394cd6kZeov4esAPkCVAriYg==", "drink"=>{"name"=>"Cappucino", "temperature"=>"135"}, "commit"=>"Create Drink"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "temperature", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cappucino"], ["temperature", 135], ["created_at", "2018-03-17 04:53:19.601841"], ["updated_at", "2018-03-17 04:53:19.601841"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/drinks/1
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/drinks/1" for 127.0.0.1 at 2018-03-17 00:53:19 -0400
+Processing by DrinksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering drinks/show.html.erb within layouts/application
+  Rendered drinks/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 53ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
